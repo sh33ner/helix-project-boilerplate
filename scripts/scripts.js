@@ -20,6 +20,10 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
+  /* Just grabs the first h1 and first picture and then 
+  The whole document is in main.
+  Hero loads first for FCP. 
+  */
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
