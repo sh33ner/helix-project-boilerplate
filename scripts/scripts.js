@@ -35,6 +35,32 @@ function buildHeroBlock(main) {
 }
 
 /**
+ *  Build the top teaser
+ * 
+ *  Stephanie Notes:
+ * 
+ * 1. Best practice is to use the container.
+ * 2. Add container class to the container div, or the main section.
+ * 
+ * 
+ */
+function buildTeaserBlock(main) {
+  const h1 = main.querySelector('h1');
+  const picture = main.querySelector('picture');
+  const description = main.querySelector('h2');
+  const button = main.querySelector('a');
+
+
+
+  if (h1 && picture && description && button && (h1.compareDocumentPosition(picture)) & Node.DOCUMENT_POSITION_PRECEDING) {
+    const section = document.createElement('div');
+    section.append(buildBlock('teaser', { elems: [picture, h1, description, button] }));
+    main.prepend(section);
+  }
+
+}
+
+/**
  * load fonts.css and set a session storage flag
  */
 async function loadFonts() {
@@ -52,7 +78,8 @@ async function loadFonts() {
  */
 function buildAutoBlocks(main) {
   try {
-    buildHeroBlock(main);
+    // buildHeroBlock(main);
+    buildTeaserBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

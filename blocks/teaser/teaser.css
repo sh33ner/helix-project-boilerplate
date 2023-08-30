@@ -1,0 +1,115 @@
+/* block specific CSS goes here */
+
+.teaser-container {
+    border-radius: 100px;
+    border: white;
+    border-width: 10px;  
+    z-index: +1;
+  }
+
+main .teaser-container > div {
+    max-width: unset;
+  }
+
+  /*
+  main .teaser-container {
+    left: 0;
+    top: 50%;
+    padding: 0;
+    margin: 0;
+    display: block;
+    box-sizing: inherit;
+
+  }
+  */
+    
+  main .teaser {
+    position: relative;
+    padding: 32px;
+    min-height: 576px;
+  }
+  
+  main .teaser h1 {
+    -webkit-font-smoothing: antialiased;  
+    color: #535658;
+    font-family: bebas-neue-pro,sans-serif;
+    font-size: 4.3125rem;
+    font-style: normal;
+    letter-spacing: .08em;
+    line-height: 105%;
+    text-transform: uppercase;
+    max-width: 37.5rem;
+    margin-left: 7.5rem;
+    width: 50%;
+  }
+
+  main .teaser h2 {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    color: #535658;
+    font-family: bebas-neue-pro,sans-serif;
+    font-family: nimbus-sans,sans-serif;
+    font-style: normal;
+    font-size: 1.625rem;
+    font-weight: 700;
+    font-weight: 300;
+    line-height: 105%;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-transform: unset;
+    margin-left: 7.5rem;
+    width: 50%;
+    max-width: 37.5rem;
+  }
+  
+  main .teaser picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    border-radius: 3.125rem 0 0 0;
+    overflow: hidden;
+  }
+  
+  main .teaser img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  main .teaser .button {
+    background-color: #c32d37;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #c32d37;
+    border-radius: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.125rem;
+    font-weight: 700;
+    font-weight: 400;
+    justify-content: center;
+    letter-spacing: .06em;
+    line-height: 105%;
+    line-height: 100%;
+    min-height: 3.125rem;
+    min-width: 12.5rem;
+    padding: .5rem 1.75rem .4375rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: 7.5rem;
+    -webkit-font-smoothing: antialiased;
+  }

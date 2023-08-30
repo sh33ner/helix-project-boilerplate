@@ -40,6 +40,10 @@
   /* nav height */
   --nav-height: 64px;
 
+  /* teaser */
+  --teaser-border-radius: 3.125rem 0 0 0;
+
+
 }
 
 @font-face {
@@ -232,6 +236,10 @@ main .section {
   padding: 64px 16px;
 }
 
+/*
+  600px styles
+  All Container Stuff
+*/
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
@@ -239,6 +247,9 @@ main .section {
 }
 
 @media (min-width: 900px) {
+  /*
+    900px styles
+  */
   .section > div {
     max-width: 1200px;
     margin: auto;
