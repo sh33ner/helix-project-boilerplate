@@ -3,7 +3,7 @@ header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
-  position: fixed;
+  position: relative;
 }
 
 header nav {
@@ -39,7 +39,10 @@ header nav[aria-expanded="true"] {
 @media (min-width: 900px) {
   header nav {
     display: flex;
+    padding: 3% 3% 0 3%;
+    width: 94%;
     justify-content: space-between;
+    position: relative;
   }
 
   header nav[aria-expanded="true"] {
@@ -145,10 +148,13 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  max-width: 100px;
+  padding: 0;
+  position: absolute;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 100%;
   height: auto;
 }
 
@@ -271,5 +277,8 @@ header nav .nav-sections ul > li > ul > li {
 
 /* tools */
 header nav .nav-tools {
-  grid-area: tools;
+  width: 40%;
+  max-width: 370px;
+  position: relative;
+  margin-top: 5px;
 }
