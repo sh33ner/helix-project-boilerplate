@@ -1,0 +1,19 @@
+
+.topnav {
+    background-color: #39a642;
+}
+
+.link-atom-header-telephone {
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+}
+
+.link-atom-header-telephone, a {
+    color: white;
+}
+
+
+.topnav > .telephone {
+    color: white;
+}

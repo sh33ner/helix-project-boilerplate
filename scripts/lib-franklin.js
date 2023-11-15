@@ -618,9 +618,13 @@ export async function waitForLCP(lcpBlocks) {
  * @returns {Promise}
  */
 export function loadHeader(header) {
+  const topHeaderBlock = buildBlock('topnav', '')
   const headerBlock = buildBlock('header', '');
+  header.append(topHeaderBlock);
   header.append(headerBlock);
+  decorateBlock(topHeaderBlock);
   decorateBlock(headerBlock);
+  loadBlock(topHeaderBlock);
   return loadBlock(headerBlock);
 }
 

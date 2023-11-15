@@ -1,8 +1,10 @@
 import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
 
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+// Shows the desktop nav
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -20,6 +22,7 @@ function closeOnEscape(e) {
   }
 }
 
+
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
@@ -30,6 +33,7 @@ function openOnKeydown(e) {
     focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
   }
 }
+
 
 function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
@@ -100,10 +104,19 @@ export default async function decorate(block) {
 
     // decorate nav DOM
     const nav = document.createElement('nav');
-    nav.id = 'nav';
     nav.innerHTML = html;
 
-    const classes = ['brand', 'sections', 'tools'];
+// Can make a section here for the top nav.
+// DSG News Ticker similar example. Not in the header but auto-blocked.
+// loadFragment()? Possibly 
+
+    const topNav = document.createElement('div');
+    topNav.innerHTML = html;
+    topNav.textContent = "TOP NAV";
+
+
+
+    const classes = ['brand', 'sections', 'appointment'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
@@ -123,6 +136,18 @@ export default async function decorate(block) {
       });
     }
 
+    // Add Appointment button
+    const navAppointment = nav.querySelector('.nav-appointment');
+    if (navAppointment){
+      const requestAppointmentButton = document.createElement('button');
+      requestAppointmentButton.textContent = 'Request Appointment';
+      requestAppointmentButton.type = 'submit';
+      requestAppointmentButton.href = '/request-appointment';
+      navAppointment.appendChild(requestAppointmentButton);
+    }
+
+    // Fixed nav until scroll, then move down the page.
+
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');
@@ -136,10 +161,12 @@ export default async function decorate(block) {
     toggleMenu(nav, navSections, isDesktop.matches);
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
+
     block.append(navWrapper);
   }
 }
